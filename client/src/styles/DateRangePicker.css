@@ -1,0 +1,15 @@
+.date-range {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+  
+  .date-range input {
+    background-color: var(--input-bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 0.5rem;
+    border-radius: 4px;
+  }
+  

@@ -1,0 +1,22 @@
+.expense-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--card-bg);
+    color: var(--text);
+  }
+  
+  .expense-table th,
+  .expense-table td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .expense-table th {
+    background-color: var(--bg);
+  }
+  
+  .expense-table tr:hover {
+    background-color: var(--hover);
+  }
+  

@@ -1,8 +1,8 @@
 // src/pages/AddExpense.js
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { TextField, Button, Paper, Typography, MenuItem, Select, FormControl, InputLabel, TextareaAutosize } from '@mui/material';
-import { DatePicker } from '@mui/lab'; // Date picker component
+import { DatePicker } from '@mui/x-date-pickers'; // Date picker component
 import api from '../services/api'; // Axios instance for API calls
 
 const AddExpense = () => {
@@ -11,7 +11,7 @@ const AddExpense = () => {
   const [date, setDate] = useState(null);
   const [notes, setNotes] = useState('');
   const [error, setError] = useState(null);
-  const history = useHistory();
+  const history = useNavigate();
 
   const categories = ['Food', 'Transport', 'Utilities', 'Entertainment', 'Others'];
 

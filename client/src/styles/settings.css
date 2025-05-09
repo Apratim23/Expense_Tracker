@@ -1,0 +1,32 @@
+.settings-container {
+    padding: 2rem;
+    background-color: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+  }
+  
+  .settings-section {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .btn {
+    padding: 8px 12px;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .logout-btn {
+    background-color: #f44336;
+    color: white;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  

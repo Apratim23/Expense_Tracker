@@ -1,12 +1,12 @@
 // src/pages/Dashboard.js
 import React, { useEffect, useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { Grid, Paper, Typography, Divider, TextField } from '@mui/material';
-import { DatePicker } from '@mui/lab'; // Date picker component
+import { DatePicker } from '@mui/x-date-pickers'; // Date picker component
 import { Bar } from 'react-chartjs-2'; // For the Bar chart
 import api from '../services/api'; // Axios instance for API calls
 import Sidebar from '../components/Sidebar'; // Custom Sidebar component
-import TopNavbar from '../components/TopNavbar'; // Custom TopNavbar component
+import TopNavbar from '../components/Navbar'; // Custom TopNavbar component
 
 const Dashboard = () => {
   const [userData, setUserData] = useState(null);
@@ -14,7 +14,7 @@ const Dashboard = () => {
   const [expenses, setExpenses] = useState([]);
   const [selectedDate, setSelectedDate] = useState(null);
   const [chartData, setChartData] = useState([]);
-  const history = useHistory();
+  const history = useNavigate();
 
   // Fetch user data and expenses
   useEffect(() => {

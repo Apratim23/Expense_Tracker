@@ -1,0 +1,23 @@
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    width: 200px;
+    height: 100vh;
+    background-color: var(--card-bg);
+    color: var(--text);
+    border-right: 1px solid var(--border);
+  }
+  
+  .sidebar-link {
+    margin: 0.5rem 0;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .sidebar-link:hover {
+    color: var(--accent);
+  }
+  

@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // Create an Axios instance
 const api = axios.create({
-  baseURL: 'http://your-backend-api-url.com/api', // Replace with your backend URL
+  baseURL: process.env.REACT_APP_API_BASE_URL, // Replace with your backend URL
   withCredentials: true, // To handle cookies for JWT authentication
 });
 

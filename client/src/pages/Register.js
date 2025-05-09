@@ -1,6 +1,6 @@
 // src/pages/Register.js
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { TextField, Button, Paper, Typography } from '@mui/material';
 import api from '../services/api'; // Axios instance for API calls
 
@@ -8,7 +8,7 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
-  const history = useHistory();
+  const history = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();

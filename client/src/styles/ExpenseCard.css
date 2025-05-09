@@ -1,0 +1,20 @@
+.expense-card {
+    background-color: var(--card-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .expense-card h4 {
+    margin: 0 0 0.5rem;
+    color: var(--text);
+  }
+  
+  .expense-card p {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent);
+  }
+  

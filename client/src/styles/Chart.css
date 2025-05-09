@@ -1,0 +1,13 @@
+.chart-box {
+    background-color: var(--card-bg);
+    padding: 1rem;
+    margin: 1rem 0;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+  }
+  
+  .chart-box h4 {
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+  
