@@ -1,48 +1,28 @@
-// src/pages/Register.js
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { TextField, Button, Paper, Typography } from '@mui/material';
-import api from '../services/api'; // Axios instance for API calls
+import { TextField, Button, Typography, Box } from '@mui/material';
+import { useHistory } from 'react-router-dom';
 
 const Register = () => {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState(null);
-  const history = useNavigate();
+  const history = useHistory();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      // Send registration request to backend
-      const response = await api.post('/auth/register', { email, password });
-      
-      // Store the JWT token in localStorage
-      localStorage.setItem('authToken', response.data.token);
-
-      // Redirect to the dashboard
-      history.push('/dashboard');
-    } catch (err) {
-      setError('Error creating account. Please try again.');
-    }
+    // handle registration logic here
+    history.push('/login');
   };
 
   return (
-    <Paper sx={{ padding: 3, maxWidth: 400, margin: 'auto', marginTop: 5 }}>
-      <Typography variant="h5" gutterBottom>
-        Register
-      </Typography>
-
-      {error && <Typography color="error">{error}</Typography>}
-
+    <Box sx={{ maxWidth: 400, margin: '0 auto' }}>
+      <Typography variant="h5">Register</Typography>
       <form onSubmit={handleSubmit}>
         <TextField
-          label="Email"
-          type="email"
+          label="Username"
           fullWidth
           margin="normal"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
         />
         <TextField
           label="Password"
@@ -51,13 +31,12 @@ const Register = () => {
           margin="normal"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          required
         />
-        <Button type="submit" fullWidth variant="contained" sx={{ marginTop: 2 }}>
+        <Button type="submit" fullWidth variant="contained" sx={{ mt: 2 }}>
           Register
         </Button>
       </form>
-    </Paper>
+    </Box>
   );
 };
 

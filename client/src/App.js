@@ -1,54 +1,39 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { ThemeProvider, useTheme } from "./contexts/ThemeContext";
+import React, { useState } from 'react';
+import { ThemeProvider, CssBaseline } from '@mui/material';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { theme } from './theme'; // Import your theme file
+import Dashboard from './pages/Dashboard';
+import AddExpense from './pages/AddExpense';
+import ExpensesList from './pages/ExpenseList';
+import Insights from './pages/Insights';
+import Settings from './pages/Settings';
+import Login from './pages/Login';
 
-import Dashboard from "./pages/Dashboard";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import AddExpense from "./pages/AddExpense";
-import Expenses from "./pages/ExpenseList";
-import Insights from "./pages/Insights";
-import Settings from "./pages/Settings";
+function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-import Sidebar from "./components/Sidebar";
-import Navbar from "./components/Navbar";
-
-import "./App.css"; // Contains theme CSS variables
-
-const AppLayout = () => {
-  const { theme } = useTheme();
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
 
   return (
-    <div className={`app ${theme}`}>
+    <ThemeProvider theme={theme(isDarkMode)}>
+      <button onClick={toggleTheme} style={{ position: 'absolute', top: 10, right: 10 }}>
+        Toggle Theme
+      </button>
+      <CssBaseline />
       <Router>
-        <Navbar />
-        <div className="main-container">
-          <Sidebar />
-          <div className="page-content">
-            <Routes>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/add" element={<AddExpense />} />
-              <Route path="/expenses" element={<Expenses />} />
-              <Route path="/insights" element={<Insights />} />
-              <Route path="/settings" element={<Settings />} />
-            </Routes>
-          </div>
-        </div>
+        <Routes>
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/add-expense" element={<AddExpense />} />
+          <Route path="/expenses" element={<ExpensesList />} />
+          <Route path="/insights" element={<Insights />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
       </Router>
-    </div>
-  );
-};
-
-const App = () => {
-  return (
-    <ThemeProvider>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/*" element={<AppLayout />} />
-      </Routes>
     </ThemeProvider>
   );
-};
+}
 
 export default App;

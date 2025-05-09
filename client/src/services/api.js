@@ -17,3 +17,13 @@ api.interceptors.request.use((config) => {
 });
 
 export default api;
+/*import axios from 'axios';
+
+const api = axios.create({
+  baseURL: 'http://localhost:5000/api',
+});
+
+export const loginUser = (credentials) => api.post('/auth/login', credentials);
+export const registerUser = (userDetails) => api.post('/auth/register', userDetails);
+
+export default api;*/

@@ -1,9 +1,8 @@
 import React from "react";
-import { useTheme } from "../contexts/ThemeContext";
-import "../styles/settings.css"; // Create this file for styling
+import { useThemeContext } from "../contexts/ThemeContext"; 
 
 const Settings = () => {
-  const { theme, toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useThemeContext();
 
   return (
     <div className="settings-container">

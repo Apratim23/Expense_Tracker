@@ -1,17 +1,15 @@
-import React from "react";
-import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
-import "./Layout.css";
+import React from 'react';
+import { Box, Grid } from '@mui/material';
+import Sidebar from './Sidebar';
 
 const Layout = ({ children }) => {
   return (
-    <div className="layout">
-      <Navbar />
-      <div className="main">
-        <Sidebar />
-        <div className="content">{children}</div>
-      </div>
-    </div>
+    <Box display="flex">
+      <Sidebar />
+      <Box component="main" flexGrow={1} p={3}>
+        {children}
+      </Box>
+    </Box>
   );
 };
 

@@ -1,17 +1,23 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import "../styles/Sidebar.css";
+import React from 'react';
+import { Drawer, List, ListItem, ListItemText, Divider } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
   return (
-    <div className="sidebar">
-      <NavLink to="/" className="sidebar-link">🏠 Dashboard</NavLink>
-      <NavLink to="/expenses" className="sidebar-link">💸 Expenses</NavLink>
-      <NavLink to="/add" className="sidebar-link">➕ Add Expense</NavLink>
-      <NavLink to="/insights" className="sidebar-link">📊 Insights</NavLink>
-      <NavLink to="/settings" className="sidebar-link">⚙️ Settings</NavLink>
-      <NavLink to="/login" className="sidebar-link">🔐 Logout</NavLink>
-    </div>
+    <Drawer variant="permanent" sx={{ width: 240 }}>
+      <List>
+        <ListItem button component={Link} to="/dashboard">
+          <ListItemText primary="Dashboard" />
+        </ListItem>
+        <ListItem button component={Link} to="/add-expense">
+          <ListItemText primary="Add Expense" />
+        </ListItem>
+        <ListItem button component={Link} to="/expenses">
+          <ListItemText primary="Expenses" />
+        </ListItem>
+        <Divider />
+      </List>
+    </Drawer>
   );
 };
 
